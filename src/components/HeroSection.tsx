@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-transparent"></div>
         </div>
         <div className="relative z-10 flex flex-col justify-center h-full p-8 md:p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Water+</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">LIMITLESS HYDRATE</h2>
           <p className="text-sm md:text-base max-w-md mb-6">
             Hydration elevated to a new level. Our scientifically formulated drinks 
             replenish electrolytes and boost your energy throughout the day.
@@ -29,8 +29,8 @@ const HeroSection = () => {
         </div>
         <div className="absolute right-0 top-0 bottom-0 z-10 w-1/3 flex items-center justify-center">
           <img 
-            src="/lovable-uploads/0d67abdd-8a40-442f-95f7-ca8b38399aac.png" 
-            alt="Hydrate Product" 
+            src="public/lovable-uploads/28d22a49-2b99-4a31-9371-74c25068278f.png" 
+            alt="Limitless Hydrate Product" 
             className="h-4/5 object-contain" 
           />
         </div>
