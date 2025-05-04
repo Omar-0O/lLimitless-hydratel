@@ -41,11 +41,12 @@ const AboutContent = () => {
           </CardContent>
         </Card>
         
-        <div className="flex justify-center items-start">
+        <div className="flex justify-center items-center h-full">
           <img 
             src="/lovable-uploads/212fbb28-1362-41f3-b246-c35835b00ed7.png" 
             alt="Limitless Hydrate Product" 
-            className="max-h-96 object-contain sticky top-12"
+            className="max-w-full h-auto object-contain"
+            style={{ maxHeight: "600px" }} // Increased size
           />
         </div>
       </div>
