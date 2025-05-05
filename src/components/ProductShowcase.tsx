@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -8,6 +9,7 @@ const products = [
     color: "bg-blue-500",
     description: "Essential electrolyte drink mix with Blue Raspberry flavor",
     image: "public/lovable-uploads/28d22a49-2b99-4a31-9371-74c25068278f.png",
+    path: "/product/original"
   },
   {
     id: 2,
@@ -15,6 +17,7 @@ const products = [
     color: "bg-pink-500",
     description: "For Hair, Skin & Nails Health with Mixed Berries flavor",
     image: "public/lovable-uploads/4f52415d-43c4-4182-8198-91373487c542.png",
+    path: "/product/glow"
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ const products = [
     color: "bg-amber-500",
     description: "With 130mg Caffeine and B Vitamins in Coffee flavor",
     image: "public/lovable-uploads/e8e1ee08-6a21-486f-9eba-6637463575b1.png",
+    path: "/product/charge"
   },
   {
     id: 4,
@@ -29,6 +33,7 @@ const products = [
     color: "bg-green-500",
     description: "Flavor & Color Free formula for kids with Watermelon flavor",
     image: "public/lovable-uploads/2ccb83a5-04ca-4c0e-bdde-04171bd0c2ce.png",
+    path: "/product/kids"
   },
 ];
 
@@ -55,9 +60,11 @@ const ProductShowcase = () => {
             
             <div className="mt-4">
               <div className="text-white text-2xl font-bold mb-6">LIMITLESS HYDRATE</div>
-              <Button className="bg-white text-gray-800 hover:bg-white/90 rounded-md w-full">
-                Shop Now
-              </Button>
+              <Link to={product.path}>
+                <Button className="bg-white text-gray-800 hover:bg-white/90 rounded-md w-full">
+                  Shop Now
+                </Button>
+              </Link>
             </div>
             
             <div className="absolute -right-6 top-1/4 opacity-50">

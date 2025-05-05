@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -8,6 +9,7 @@ const products = [
     color: "bg-pink-500",
     description: "Healthy Hair, Skin, & Nails with Mixed Berries Flavor",
     image: "public/lovable-uploads/4f52415d-43c4-4182-8198-91373487c542.png",
+    path: "/product/glow"
   },
   {
     id: 2,
@@ -15,6 +17,7 @@ const products = [
     color: "bg-blue-500",
     description: "Essential Electrolytes with Blue Raspberry Flavor",
     image: "public/lovable-uploads/28d22a49-2b99-4a31-9371-74c25068278f.png",
+    path: "/product/original"
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ const products = [
     color: "bg-green-500",
     description: "Gentle Hydration with Watermelon Flavor",
     image: "public/lovable-uploads/2ccb83a5-04ca-4c0e-bdde-04171bd0c2ce.png",
+    path: "/product/kids"
   },
   {
     id: 4,
@@ -29,6 +33,7 @@ const products = [
     color: "bg-amber-500",
     description: "Energy Boost with 130mg Caffeine and Coffee Flavor",
     image: "public/lovable-uploads/e8e1ee08-6a21-486f-9eba-6637463575b1.png",
+    path: "/product/charge"
   },
 ];
 
@@ -47,9 +52,11 @@ const ProductCards = () => {
           />
           <h3 className="text-xl font-bold mb-2 text-center">{product.name}</h3>
           <p className="text-gray-600 text-center mb-6">{product.description}</p>
-          <Button className={`${product.color} text-white hover:opacity-90`}>
-            Learn More
-          </Button>
+          <Link to={product.path}>
+            <Button className={`${product.color} text-white hover:opacity-90`}>
+              Learn More
+            </Button>
+          </Link>
         </div>
       ))}
     </div>
