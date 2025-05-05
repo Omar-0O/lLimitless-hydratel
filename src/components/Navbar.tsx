@@ -8,6 +8,7 @@ const Navbar = () => {
       <div className="hidden md:flex space-x-6">
         <Link to="/products" className="text-sm font-medium text-gray-600 hover:text-gray-900">Products</Link>
         <Link to="/about" className="text-sm font-medium text-gray-600 hover:text-gray-900">About us</Link>
+        <Link to="/faq" className="text-sm font-medium text-gray-600 hover:text-gray-900">FAQ</Link>
       </div>
       
       <Link to="/" className="flex items-center justify-center">
