@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Book, Lightbulb, Flask, Heart } from "lucide-react";
+import { Book, Lightbulb, Beaker, Heart } from "lucide-react";
 
 const HydrationInsights = () => {
   const insightCards = [
@@ -23,7 +23,7 @@ const HydrationInsights = () => {
       id: 3,
       title: "Hydrating properly for cognitive function",
       category: "Science",
-      icon: <Flask className="h-5 w-5" />,
+      icon: <Beaker className="h-5 w-5" />,
       image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
     },
     {
