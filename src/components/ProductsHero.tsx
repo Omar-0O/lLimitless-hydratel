@@ -3,29 +3,28 @@ import { Button } from "@/components/ui/button";
 
 const ProductsHero = () => {
   return (
-    <div className="relative py-16 mb-16 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Discover Your Hydration Upgrade
-        </h1>
-        
-        <div className="relative">
-          <div className="relative z-10 mt-8">
+    <div className="container mx-auto px-4 py-8 mb-16">
+      <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          {/* Left side - Text content */}
+          <div className="p-8 md:p-12 md:w-1/2">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+              Discover Your<br />
+              Hydration Upgrade
+            </h1>
+            
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Learn More
             </Button>
           </div>
           
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
-            <div className="relative">
-              <div className="absolute -left-16 -top-16 w-64 h-64 bg-cyan-400 rounded-full filter blur-3xl opacity-40"></div>
-              <img 
-                src="public/lovable-uploads/28d22a49-2b99-4a31-9371-74c25068278f.png"
-                alt="Limitless Hydrate Product" 
-                className="relative z-10 h-80 object-contain" 
-              />
-              <div className="absolute -right-20 -bottom-10 w-48 h-48 bg-blue-500 rounded-full filter blur-2xl opacity-30"></div>
-            </div>
+          {/* Right side - Product image with splash */}
+          <div className="md:w-1/2 relative">
+            <img 
+              src="/public/lovable-uploads/53212e36-e1ef-4cde-9575-17ab49a5db3d.png" 
+              alt="Limitless Hydrate with Splash Effect" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>
