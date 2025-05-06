@@ -6,6 +6,7 @@ import {
   AccordionTrigger 
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 
 const FAQContent = () => {
   const generalQuestions = [
@@ -109,21 +110,56 @@ const FAQContent = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <Tabs defaultValue="general" className="w-full">
-        <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8">
-          <TabsTrigger value="general">General Questions</TabsTrigger>
-          <TabsTrigger value="ingredients">Ingredients</TabsTrigger>
-          <TabsTrigger value="usage">Usage Instructions</TabsTrigger>
-          <TabsTrigger value="availability">Availability & Sales</TabsTrigger>
+    <div className="max-w-5xl mx-auto">
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto">
+          Find answers to common questions about our products, ingredients, usage, and availability.
+        </p>
+      </div>
+      
+      <Tabs defaultValue="general" className="w-full mb-16">
+        <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-transparent">
+          <TabsTrigger 
+            value="general"
+            className="data-[state=active]:bg-black data-[state=active]:text-white rounded-full px-6 py-2 text-sm"
+          >
+            General
+          </TabsTrigger>
+          <TabsTrigger 
+            value="ingredients"
+            className="data-[state=active]:bg-black data-[state=active]:text-white rounded-full px-6 py-2 text-sm"
+          >
+            Ingredients
+          </TabsTrigger>
+          <TabsTrigger 
+            value="usage"
+            className="data-[state=active]:bg-black data-[state=active]:text-white rounded-full px-6 py-2 text-sm"
+          >
+            Usage
+          </TabsTrigger>
+          <TabsTrigger 
+            value="availability"
+            className="data-[state=active]:bg-black data-[state=active]:text-white rounded-full px-6 py-2 text-sm"
+          >
+            Availability
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="general">
           <Accordion type="single" collapsible className="w-full">
             {generalQuestions.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border-t border-gray-200 last:border-b"
+              >
+                <AccordionTrigger className="py-5 text-lg font-medium">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5 text-base">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -132,9 +168,17 @@ const FAQContent = () => {
         <TabsContent value="ingredients">
           <Accordion type="single" collapsible className="w-full">
             {ingredientQuestions.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border-t border-gray-200 last:border-b"
+              >
+                <AccordionTrigger className="py-5 text-lg font-medium">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5 text-base">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -143,9 +187,17 @@ const FAQContent = () => {
         <TabsContent value="usage">
           <Accordion type="single" collapsible className="w-full">
             {usageInstructions.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border-t border-gray-200 last:border-b"
+              >
+                <AccordionTrigger className="py-5 text-lg font-medium">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5 text-base">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -154,55 +206,89 @@ const FAQContent = () => {
         <TabsContent value="availability">
           <Accordion type="single" collapsible className="w-full">
             {availabilityQuestions.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border-t border-gray-200 last:border-b"
+              >
+                <AccordionTrigger className="py-5 text-lg font-medium">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5 text-base">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </TabsContent>
       </Tabs>
       
-      <div className="mt-16 bg-white p-8 rounded-lg shadow-md">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+      <div className="rounded-xl overflow-hidden bg-[#E9F6FE] shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="h-full">
             <img 
-              src="public/lovable-uploads/3801d9cb-6548-43a0-90ab-fd7c31a4a8fa.png" 
+              src="public/lovable-uploads/ae9b3a6e-d4af-4c12-a863-ccfee3f59990.png"
               alt="Limitless Hydrate Products" 
-              className="rounded-lg w-full h-auto"
+              className="w-full h-full object-cover object-center"
             />
           </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Your name"
-                />
+          <div className="p-8 md:p-10">
+            <h3 className="text-2xl font-bold mb-6">Contact us</h3>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="firstname" className="block text-sm font-medium mb-1">First Name</label>
+                  <input 
+                    type="text" 
+                    id="firstname" 
+                    placeholder="First Name"
+                    className="w-full border-0 border-b border-gray-300 bg-transparent py-2 focus:ring-0 focus:border-black"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastname" className="block text-sm font-medium mb-1">Last Name</label>
+                  <input 
+                    type="text" 
+                    id="lastname" 
+                    placeholder="Last Name"
+                    className="w-full border-0 border-b border-gray-300 bg-transparent py-2 focus:ring-0 focus:border-black"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1">Mail</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="address@domain.com"
+                    className="w-full border-0 border-b border-gray-300 bg-transparent py-2 focus:ring-0 focus:border-black"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    placeholder="+00123456789"
+                    className="w-full border-0 border-b border-gray-300 bg-transparent py-2 focus:ring-0 focus:border-black"
+                  />
+                </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Question</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
                 <textarea 
                   id="message" 
-                  rows={4} 
-                  className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="What would you like to know?"
+                  rows={3}
+                  placeholder="Write your message..."
+                  className="w-full border-0 border-b border-gray-300 bg-transparent py-2 focus:ring-0 focus:border-black resize-none"
                 ></textarea>
               </div>
-              <button type="submit" className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-black/90">Send</button>
+              <div>
+                <Button type="submit" className="rounded-full bg-black hover:bg-black/90 text-white px-10">
+                  Send
+                </Button>
+              </div>
             </form>
           </div>
         </div>
