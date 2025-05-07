@@ -1,6 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const products = [
   {
@@ -37,91 +39,133 @@ const products = [
   },
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah T.",
+    role: "Marathon Runner",
+    quote: "Limitless Hydrate keeps me going through my longest runs. The electrolyte balance is perfect!",
+    avatar: "public/lovable-uploads/90f4264d-21b3-4199-aa45-ccc95217ff4e.png"
+  },
+  {
+    id: 2,
+    name: "Michael L.",
+    role: "Fitness Instructor",
+    quote: "I recommend Water+ to all my clients. It's a game changer for recovery between intense workouts.",
+    avatar: "public/lovable-uploads/44b72049-0af7-451e-b550-8d28737adad1.png"
+  },
+  {
+    id: 3,
+    name: "Jennifer K.",
+    role: "Yoga Teacher",
+    quote: "The clean ingredients align perfectly with my wellness philosophy. I love the subtle flavor.",
+    avatar: "public/lovable-uploads/1a6a7d08-b757-444f-88f5-cb200aaa1263.png"
+  }
+];
+
 const ProductShowcase = () => {
   return (
-    <div className="py-12">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold mb-2">Choose Your Refreshment</h2>
-        <p className="text-gray-600 max-w-md mx-auto">
-          Something for every taste and need. Our range of hydration drinks are scientifically formulated to keep you at your best.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {products.map((product) => (
-          <div 
-            key={product.id} 
-            className={`${product.color} rounded-lg p-6 flex flex-col justify-between min-h-[320px] relative overflow-hidden`}
-          >
-            <div className="mb-auto">
-              <h3 className="text-xl font-bold text-white mb-2">{product.name}</h3>
-              <p className="text-white/90 text-sm">{product.description}</p>
+    <div className="py-16">
+      {/* Product Tabs Section */}
+      <div className="mb-20">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Products</h2>
+          <p className="text-gray-600 max-w-lg mx-auto">
+            Scientifically formulated hydration for every need. Choose your perfect match from our range of specialized formulas.
+          </p>
+        </div>
+        
+        <Tabs defaultValue="all" className="w-full max-w-4xl mx-auto">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="original">Original</TabsTrigger>
+            <TabsTrigger value="glow">Glow</TabsTrigger>
+            <TabsTrigger value="charge">Charge</TabsTrigger>
+            <TabsTrigger value="kids">Kids</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="all" className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {products.map((product) => (
+                <Card key={product.id} className="overflow-hidden border-0 shadow-md">
+                  <div className={`${product.color} h-40 flex items-center justify-center relative`}>
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="h-36 object-contain" 
+                    />
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{product.description}</p>
+                    <Link to={product.path}>
+                      <Button variant="outline" className="w-full">
+                        Learn More
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-            
-            <div className="mt-4">
-              <div className="text-white text-2xl font-bold mb-6">LIMITLESS HYDRATE</div>
-              <Link to={product.path}>
-                <Button className="bg-white text-gray-800 hover:bg-white/90 rounded-md w-full">
-                  Shop Now
-                </Button>
-              </Link>
-            </div>
-            
-            <div className="absolute -right-6 top-1/4 opacity-50">
-              <img 
-                src={product.image} 
-                alt={product.name} 
-                className="w-32 h-32 object-contain transform rotate-12" 
-              />
-            </div>
-          </div>
-        ))}
+          </TabsContent>
+          
+          {products.map((product) => (
+            <TabsContent key={product.id} value={product.name.toLowerCase()} className="space-y-4">
+              <div className="flex flex-col md:flex-row items-center justify-between bg-white rounded-lg p-6 shadow-md">
+                <div className="md:w-1/2 mb-6 md:mb-0 flex justify-center">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="h-64 object-contain" 
+                  />
+                </div>
+                <div className="md:w-1/2 md:pl-8">
+                  <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
+                  <p className="text-gray-600 mb-4">{product.description}</p>
+                  <Link to={product.path}>
+                    <Button className={`${product.color} text-white hover:opacity-90`}>
+                      View Details
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
       
-      <div className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-6">Connect & Hydrate</h2>
-        <p className="text-gray-600 text-center max-w-md mx-auto mb-10">
-          See Limitless Hydrate in its natural environment and follow other hydration enthusiasts on social media. Tag us in your posts!
-        </p>
+      {/* Testimonials Section */}
+      <div className="bg-[#E9F6FE] py-16 px-4 rounded-xl">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-2">What Our Customers Say</h2>
+          <p className="text-gray-600 max-w-md mx-auto">
+            Join thousands of satisfied customers who have made Water+ part of their daily routine.
+          </p>
+        </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div className="bg-blue-100 rounded-lg aspect-square overflow-hidden">
-            <img 
-              src="public/lovable-uploads/90f4264d-21b3-4199-aa45-ccc95217ff4e.png" 
-              alt="Limitless Hydrate" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
-          <div className="bg-pink-100 rounded-lg aspect-square overflow-hidden">
-            <img 
-              src="public/lovable-uploads/6ae64fe5-d240-4afa-ba2e-d120bc8e8b2b.png" 
-              alt="Limitless Hydrate" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
-          <div className="bg-green-100 rounded-lg aspect-square overflow-hidden">
-            <img 
-              src="public/lovable-uploads/44b72049-0af7-451e-b550-8d28737adad1.png" 
-              alt="Limitless Hydrate" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
-          <div className="bg-blue-100 rounded-lg aspect-square overflow-hidden">
-            <img 
-              src="public/lovable-uploads/ebb4b8d2-d692-49ce-9b63-faeebc3ce72a.png" 
-              alt="Limitless Hydrate" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
-          <div className="bg-yellow-100 rounded-lg aspect-square overflow-hidden">
-            <img 
-              src="public/lovable-uploads/1a6a7d08-b757-444f-88f5-cb200aaa1263.png" 
-              alt="Limitless Hydrate" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.id} className="border-0 shadow-md">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name} 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
+                <div>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
+      
+      {/* No longer including the social media grid section as it's not in the new design */}
     </div>
   );
 };
