@@ -223,7 +223,7 @@ const FAQContent = () => {
         </TabsContent>
       </Tabs>
       
-      <div className="rounded-xl overflow-hidden bg-[#E9F6FE] shadow-sm">
+      <div className="rounded-xl overflow-hidden bg-white shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="h-full">
             <img 
