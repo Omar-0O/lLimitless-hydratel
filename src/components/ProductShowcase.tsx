@@ -39,30 +39,6 @@ const products = [
   },
 ];
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah T.",
-    role: "Marathon Runner",
-    quote: "Limitless Hydrate keeps me going through my longest runs. The electrolyte balance is perfect!",
-    avatar: "public/lovable-uploads/90f4264d-21b3-4199-aa45-ccc95217ff4e.png"
-  },
-  {
-    id: 2,
-    name: "Michael L.",
-    role: "Fitness Instructor",
-    quote: "I recommend Water+ to all my clients. It's a game changer for recovery between intense workouts.",
-    avatar: "public/lovable-uploads/44b72049-0af7-451e-b550-8d28737adad1.png"
-  },
-  {
-    id: 3,
-    name: "Jennifer K.",
-    role: "Yoga Teacher",
-    quote: "The clean ingredients align perfectly with my wellness philosophy. I love the subtle flavor.",
-    avatar: "public/lovable-uploads/1a6a7d08-b757-444f-88f5-cb200aaa1263.png"
-  }
-];
-
 const ProductShowcase = () => {
   return (
     <div className="py-16">
@@ -134,40 +110,10 @@ const ProductShowcase = () => {
         </Tabs>
       </div>
       
-      {/* Testimonials Section */}
-      <div className="bg-[#E9F6FE] py-16 px-4 rounded-xl">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2">What Our Customers Say</h2>
-          <p className="text-gray-600 max-w-md mx-auto">
-            Join thousands of satisfied customers who have made Water+ part of their daily routine.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="border-0 shadow-md">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name} 
-                    className="w-full h-full object-cover" 
-                  />
-                </div>
-                <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
-                <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-      
-      {/* No longer including the social media grid section as it's not in the new design */}
+      {/* Removed the "What Our Customers Say" testimonials section */}
     </div>
   );
 };
 
 export default ProductShowcase;
+
