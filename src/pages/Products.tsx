@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ProductsHero from "@/components/ProductsHero";
 import ProductCards from "@/components/ProductCards";
 import ProductShowcase from "@/components/ProductShowcase";
+import ProductComparisonTable from "@/components/ProductComparisonTable";
 import { Link } from "react-router-dom";
 
 const Products = () => {
@@ -22,6 +23,7 @@ const Products = () => {
           </div>
           <ProductShowcase />
         </div>
+        <ProductComparisonTable />
       </div>
       <Footer />
     </div>
