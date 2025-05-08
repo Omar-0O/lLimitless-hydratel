@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HydrateFeatures from "@/components/HydrateFeatures";
 import ProductShowcase from "@/components/ProductShowcase";
+import ConnectHydrateSection from "@/components/ConnectHydrateSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
         <HydrateFeatures />
         <ProductShowcase />
       </div>
+      <ConnectHydrateSection />
       <Footer />
     </div>
   );
