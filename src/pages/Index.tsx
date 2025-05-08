@@ -1,6 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import HydrateFeatures from "@/components/HydrateFeatures";
 import ProductShowcase from "@/components/ProductShowcase";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ const Index = () => {
       <Navbar />
       <div className="container mx-auto px-4 py-6">
         <HeroSection />
+        <HydrateFeatures />
         <ProductShowcase />
       </div>
       <Footer />

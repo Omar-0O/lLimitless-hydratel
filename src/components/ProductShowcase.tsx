@@ -44,13 +44,6 @@ const ProductShowcase = () => {
     <div className="py-16">
       {/* Product Tabs Section */}
       <div className="mb-20">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Products</h2>
-          <p className="text-gray-600 max-w-lg mx-auto">
-            Scientifically formulated hydration for every need. Choose your perfect match from our range of specialized formulas.
-          </p>
-        </div>
-        
         <Tabs defaultValue="all" className="w-full max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-5 mb-8">
             <TabsTrigger value="all">All</TabsTrigger>
@@ -109,11 +102,8 @@ const ProductShowcase = () => {
           ))}
         </Tabs>
       </div>
-      
-      {/* Removed the "What Our Customers Say" testimonials section */}
     </div>
   );
 };
 
 export default ProductShowcase;
-
